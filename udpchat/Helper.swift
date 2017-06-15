@@ -9,6 +9,8 @@
 import Foundation
 
 class Helper {
+    
+    /// Get current time
     static func currentTime() -> String {
         let dateFormatter : DateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"

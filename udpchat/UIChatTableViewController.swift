@@ -129,7 +129,6 @@ extension UIChatTableViewController : ChatProtocol {
 // MARK: - Support function
 
 extension UIChatTableViewController {
-    
     func updateTableContentInset() {
         let numRows = tableView(tableView, numberOfRowsInSection: 0)
         var contentInsetTop = self.tableView.bounds.size.height
@@ -150,6 +149,7 @@ extension UIChatTableViewController {
 
 
 // MARK: - Text field delegate
+
 extension UIChatTableViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         isPrintingNow = true
@@ -168,6 +168,8 @@ extension UIChatTableViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// MARK: - UDPManagerDelegate
 
 extension UIChatTableViewController: UDPManagerDelegate {
     func receiveMessage(message: String) {

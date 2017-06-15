@@ -3,6 +3,8 @@ import CocoaAsyncSocket
 
 class UDPManager: NSObject,  GCDAsyncUdpSocketDelegate {
     
+    // MARK: - Variables
+    
     //ssdp stuff
     var ssdpAddres          = "239.255.255.250"
     //var ssdpAddres          = "255.255.255.255"
@@ -11,28 +13,27 @@ class UDPManager: NSObject,  GCDAsyncUdpSocketDelegate {
     var error : NSError?
     var delegate: UDPManagerDelegate?
     
+    // MARK: - Setup functions
     
     override init() {
        super.init()
-        //send M-Search
-        self.ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
-        try! ssdpSocket.enableBroadcast(true)
+    self.ssdpSocket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
+    try! ssdpSocket.enableBroadcast(true)
         
-        
-        //bind for responses
+    //bind for responses
       try!  ssdpSocket.bind(toPort: ssdpPort)
       try!  ssdpSocket.joinMulticastGroup(ssdpAddres)
       try!  ssdpSocket.beginReceiving()
     
-     
     }
+    
+    // MARK: - Methods
     
     func sendMessage(message: String) {
         ssdpSocket.send(message.data(using: String.Encoding.utf8)!, toHost: ssdpAddres, port: ssdpPort, withTimeout: 1, tag: 0)
     }
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didConnectToAddress address: Data) {
-        
         print("didConnect")
         print(address)
     }
