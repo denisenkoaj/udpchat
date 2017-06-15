@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="chatOutcomingCell" rowHeight="66" id="KGk-i7-Jjw" customClass="UIChatTableViewOutcomingCell" customModule="udpchat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6GV-3U-bHg">
+                        <rect key="frame" x="111.5" y="10" width="200.5" height="52"/>
+                        <color key="backgroundColor" red="0.1038140191" green="1" blue="1" alpha="0.21824165239726026" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SW0-jD-eMk">
+                        <rect key="frame" x="218.5" y="38" width="83.5" height="18"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="749" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4V-2D-xsr">
+                        <rect key="frame" x="144.5" y="5" width="149.5" height="33"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="j3k-MX-nJu"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </string>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SW0-jD-eMk" firstAttribute="top" secondItem="n4V-2D-xsr" secondAttribute="bottom" id="6qP-5p-w8S"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="n4V-2D-xsr" secondAttribute="trailing" constant="18" id="Okp-e0-wkV"/>
+                    <constraint firstAttribute="trailing" secondItem="SW0-jD-eMk" secondAttribute="trailing" constant="18" id="PGi-4e-LMd"/>
+                    <constraint firstAttribute="bottom" secondItem="SW0-jD-eMk" secondAttribute="bottom" constant="9.5" id="RQx-qX-F61"/>
+                    <constraint firstItem="6GV-3U-bHg" firstAttribute="top" secondItem="n4V-2D-xsr" secondAttribute="top" constant="5" id="Vuw-xa-KoO"/>
+                    <constraint firstItem="6GV-3U-bHg" firstAttribute="leading" secondItem="n4V-2D-xsr" secondAttribute="leading" constant="-33" id="fVa-Ct-ib6"/>
+                    <constraint firstItem="6GV-3U-bHg" firstAttribute="trailing" secondItem="SW0-jD-eMk" secondAttribute="trailing" constant="10" id="gRl-is-Qai"/>
+                    <constraint firstItem="6GV-3U-bHg" firstAttribute="bottom" secondItem="SW0-jD-eMk" secondAttribute="bottom" constant="6" id="gTN-0E-Baq"/>
+                    <constraint firstItem="n4V-2D-xsr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="131" id="nHT-xw-fM5"/>
+                    <constraint firstItem="n4V-2D-xsr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-3" id="oZl-Zf-Dqt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backView" destination="6GV-3U-bHg" id="rcz-vd-rPu"/>
+                <outlet property="messageTextView" destination="n4V-2D-xsr" id="NXe-Js-htB"/>
+                <outlet property="textViewHeightConstraint" destination="j3k-MX-nJu" id="xml-eY-qHC"/>
+                <outlet property="timeLabel" destination="SW0-jD-eMk" id="0We-yf-DMU"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="43"/>
+        </tableViewCell>
+    </objects>
+</document>
